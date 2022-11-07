@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clean and Install') {
             steps {
-               bat 'mvn clean install -Drat.numUnapprovedLicenses=100'
+               bat 'mvn clean install -DskipTests'
             }
         }
         stage('Package') {
