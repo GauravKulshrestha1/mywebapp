@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clean and Install') {
             steps {
-               bat 'mvn clean install -Drat.numUnapprovedLicenses=5000'
+               bat 'mvn clean install -s /home/user/.m2/settings.xml  -Drat.numUnapprovedLicenses=2000'
             }
         }
         stage('Package') {
