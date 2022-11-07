@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clean and Install') {
             steps {
-               bat 'mvn clean install -DskipTests'
+               bat 'mvn clean install'
             }
         }
         stage('Package') {
