@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clean and Install') {
             steps {
-               bat 'mvn clean install'
+               bat 'mvn clean apache-rat:check -Drat.numUnapprovedLicenses=600 package -D maven.javadoc.skip=true assembly:single -Dhadoop.profile=2'
             }
         }
         stage('Package') {
