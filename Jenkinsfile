@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clean and Install') {
             steps {
-               bat 'mvn clean install apache-rat:check -Drat.numUnapprovedLicenses=600 package'
+               bat 'mvn clean install -Drat.numUnapprovedLicenses=600'
             }
         }
         stage('Package') {
